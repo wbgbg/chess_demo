@@ -1,0 +1,225 @@
+.game-info {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 12px;
+  padding: 24px;
+  color: white;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  min-width: 300px;
+  max-width: 400px;
+}
+
+.game-title {
+  text-align: center;
+  margin: 0 0 20px 0;
+  font-size: 28px;
+  font-weight: bold;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.status-section {
+  margin-bottom: 24px;
+}
+
+.game-status {
+  text-align: center;
+  font-size: 18px;
+  font-weight: 600;
+  padding: 12px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.1);
+  margin-bottom: 16px;
+  transition: all 0.3s ease;
+}
+
+.game-status.check {
+  background: rgba(255, 193, 7, 0.3);
+  border: 2px solid #ffc107;
+  animation: pulse 1.5s infinite;
+}
+
+.game-status.checkmate {
+  background: rgba(220, 53, 69, 0.3);
+  border: 2px solid #dc3545;
+  animation: pulse 1.5s infinite;
+}
+
+.current-player {
+  display: flex;
+  justify-content: center;
+}
+
+.player-indicator {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.2);
+  transition: all 0.3s ease;
+}
+
+.player-indicator.white {
+  background: rgba(255, 255, 255, 0.3);
+  color: #333;
+}
+
+.player-indicator.black {
+  background: rgba(0, 0, 0, 0.3);
+  color: white;
+}
+
+.player-symbol {
+  font-size: 24px;
+}
+
+.player-name {
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.controls {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.btn {
+  flex: 1;
+  padding: 12px 16px;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.btn:active {
+  transform: translateY(0);
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #28a745, #20c997);
+  color: white;
+}
+
+.btn-primary:hover {
+  background: linear-gradient(135deg, #218838, #1ea080);
+}
+
+.btn-secondary {
+  background: linear-gradient(135deg, #6c757d, #495057);
+  color: white;
+}
+
+.btn-secondary:hover:not(:disabled) {
+  background: linear-gradient(135deg, #5a6268, #3d4043);
+}
+
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.btn:disabled:hover {
+  transform: none;
+  box-shadow: none;
+}
+
+.move-history {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  padding: 16px;
+}
+
+.move-history h3 {
+  margin: 0 0 12px 0;
+  font-size: 18px;
+  text-align: center;
+}
+
+.moves-list {
+  max-height: 200px;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.3) transparent;
+}
+
+.moves-list::-webkit-scrollbar {
+  width: 6px;
+}
+
+.moves-list::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.moves-list::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 3px;
+}
+
+.move-item {
+  padding: 4px 8px;
+  margin: 2px 0;
+  border-radius: 4px;
+  font-family: 'Courier New', monospace;
+  font-size: 14px;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.move-item:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.no-moves {
+  text-align: center;
+  font-style: italic;
+  opacity: 0.7;
+  margin: 0;
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .game-info {
+    min-width: 250px;
+    max-width: 300px;
+    padding: 20px;
+  }
+  
+  .game-title {
+    font-size: 24px;
+  }
+  
+  .game-status {
+    font-size: 16px;
+  }
+  
+  .controls {
+    flex-direction: column;
+  }
+  
+  .btn {
+    padding: 10px 14px;
+    font-size: 13px;
+  }
+}

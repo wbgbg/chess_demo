@@ -1,0 +1,126 @@
+.square {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 48px;
+  box-sizing: border-box;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.2s ease;
+  user-select: none;
+}
+
+.square:hover {
+  transform: scale(1.02);
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.square-light {
+  background-color: #f0d9b5;
+}
+
+.square-dark {
+  background-color: #b58863;
+}
+
+.square-selected {
+  background-color: #7fb069 !important;
+  box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.3);
+}
+
+.square-highlighted {
+  background-color: #ffeb3b !important;
+  animation: pulse 1s infinite;
+}
+
+.square-possible-move {
+  background-color: rgba(127, 176, 105, 0.3) !important;
+}
+
+.square-last-move {
+  background-color: rgba(255, 235, 59, 0.4) !important;
+}
+
+.piece {
+  font-size: 48px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  transition: transform 0.2s ease;
+}
+
+.piece:hover {
+  transform: scale(1.1);
+}
+
+.piece-white {
+  color: #ffffff;
+  filter: drop-shadow(1px 1px 2px rgba(0, 0, 0, 0.8));
+}
+
+.piece-black {
+  color: #2c2c2c;
+  filter: drop-shadow(1px 1px 2px rgba(255, 255, 255, 0.3));
+}
+
+.move-indicator {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-color: rgba(127, 176, 105, 0.8);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.capture-indicator {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border: 3px solid rgba(255, 87, 87, 0.8);
+  border-radius: 50%;
+  pointer-events: none;
+  box-sizing: border-box;
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .square {
+    font-size: 32px;
+  }
+  
+  .piece {
+    font-size: 32px;
+  }
+  
+  .move-indicator {
+    width: 15px;
+    height: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .square {
+    font-size: 24px;
+  }
+  
+  .piece {
+    font-size: 24px;
+  }
+  
+  .move-indicator {
+    width: 12px;
+    height: 12px;
+  }
+}

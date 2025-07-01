@@ -1,0 +1,135 @@
+.board-container {
+  position: relative;
+  display: inline-block;
+  margin: 20px auto;
+}
+
+.board {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  width: 480px;
+  height: 480px;
+  border: 3px solid #8b4513;
+  border-radius: 8px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  background: linear-gradient(45deg, #d4a574, #c49464);
+  padding: 4px;
+  position: relative;
+}
+
+.coordinates {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.files {
+  position: absolute;
+  bottom: -25px;
+  left: 7px;
+  right: 7px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.ranks {
+  position: absolute;
+  left: -25px;
+  top: 7px;
+  bottom: 7px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.file-label,
+.rank-label {
+  font-size: 14px;
+  font-weight: bold;
+  color: #8b4513;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.rank-label {
+  width: 20px;
+}
+
+.file-label {
+  height: 20px;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .board {
+    width: 360px;
+    height: 360px;
+  }
+  
+  .file-label,
+  .rank-label {
+    font-size: 12px;
+    width: 45px;
+    height: 45px;
+  }
+  
+  .rank-label {
+    width: 15px;
+  }
+  
+  .file-label {
+    height: 15px;
+  }
+  
+  .files {
+    bottom: -20px;
+    left: 6px;
+    right: 6px;
+  }
+  
+  .ranks {
+    left: -20px;
+    top: 6px;
+    bottom: 6px;
+  }
+}
+
+@media (max-width: 480px) {
+  .board {
+    width: 280px;
+    height: 280px;
+  }
+  
+  .file-label,
+  .rank-label {
+    font-size: 10px;
+    width: 35px;
+    height: 35px;
+  }
+  
+  .rank-label {
+    width: 12px;
+  }
+  
+  .file-label {
+    height: 12px;
+  }
+  
+  .files {
+    bottom: -15px;
+    left: 4px;
+    right: 4px;
+  }
+  
+  .ranks {
+    left: -15px;
+    top: 4px;
+    bottom: 4px;
+  }
+}
