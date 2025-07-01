@@ -1,0 +1,19 @@
+.square {
+  width: 100%; /* Fill the grid cell */
+  height: 100%; /* Fill the grid cell */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px; /* For piece representation later */
+  box-sizing: border-box; /* Include padding and border in the element's total width and height */
+}
+
+.square-light {
+  background-color: #f0d9b5; /* Light wood color */
+}
+
+.square-dark {
+  background-color: #b58863; /* Dark wood color */
+}
+
+/* Add styles for pieces later */
